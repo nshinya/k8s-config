@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -11,7 +12,7 @@ metadata:
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: eks-example
@@ -22,7 +23,7 @@ spec:
     spec:
       containers:
       - name: eks-example
-        image: 455883284860.dkr.ecr.us-west-2.amazonaws.com/sourcerepo:latest
+        image: 455883284860.dkr.ecr.us-west-2.amazonaws.com/sourcerepo:30687a75
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
